@@ -21,7 +21,10 @@ namespace git_jenkins_console
         {
             if (string.IsNullOrWhiteSpace(name)) throw new ArgumentNullException("name");
 
-            return "Hello, " +  name;
+            var strBuilder = new StringBuilder("Hello, ");
+            strBuilder.Append(name);
+
+            return strBuilder.ToString();
         }
     }
 }
