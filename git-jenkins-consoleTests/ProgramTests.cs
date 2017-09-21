@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.IO;
 
 namespace git_jenkins_console.Tests
 {
@@ -38,6 +39,33 @@ namespace git_jenkins_console.Tests
         }
 
         [TestMethod()]
+        public void Main_WithValidParameter_ShowdGreetingMessage()
+        {
+            //Arrange             
+            var originalConsoleOut = Console.Out;
+            var result = string.Empty;
+
+            //Act
+            try
+            {
+                using (var writer = new StringWriter())
+                {
+                    Console.SetOut(writer);
+                    Program.Main(new string[] { "Luis" });
+                    writer.Flush();
+                    result = writer.GetStringBuilder().ToString().Trim();
+                }
+            }
+            finally
+            {
+                Console.SetOut(originalConsoleOut);
+            }
+
+            //Assert
+            Assert.AreEqual("Hello, Luis", result);
+        }
+
+        [TestMethod()]
         [ExpectedException(typeof(System.ArgumentNullException))]
         public void SayHello_WithNullParameter_ThrowException()
         {
@@ -62,6 +90,18 @@ namespace git_jenkins_console.Tests
 
             //Assert
             Assert.Fail("An exception was expected.");
+        }
+
+        [TestMethod()]
+        public void SayHello_WithValidParameter_ReturnGreetingMessage()
+        {
+            //Arrange             
+
+            //Act
+            var result = Program.SayHello("Luis").Trim();
+
+            //Assert
+            Assert.AreEqual("Hello, Luis", result);
         }
     }
 }

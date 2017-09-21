@@ -13,8 +13,7 @@ namespace git_jenkins_console
             if (args == null) throw new ArgumentNullException("args");
             if (args.Length == 0) throw new ArgumentOutOfRangeException("args");
 
-            Console.WriteLine(SayHello("Luis"));
-            Console.ReadKey();
+            Console.WriteLine(SayHello(args[0]));
         }
 
         public static string SayHello(string name)
