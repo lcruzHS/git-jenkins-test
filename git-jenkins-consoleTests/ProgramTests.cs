@@ -100,7 +100,7 @@ namespace git_jenkins_console.Tests
             var result = Program.SayHello("Luis").Trim();
 
             //Assert
-            Assert.AreEqual("Hello, Luis!", result);
+            Assert.AreEqual("Hello, Luis", result);
         }
     }
 }
