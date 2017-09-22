@@ -78,7 +78,6 @@ namespace git_jenkins_console.Tests
             Assert.Fail("An exception was expected.");
         }
 
-
         [TestMethod()]
         [ExpectedException(typeof(System.ArgumentNullException))]
         public void SayHello_WithEmptyParameter_ThrowException()
