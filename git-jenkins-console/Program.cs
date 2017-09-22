@@ -13,7 +13,7 @@ namespace git_jenkins_console
             if (args == null) throw new ArgumentNullException("args");
 
             //Braking the build to test build failure on Jenkins
-            if (args.Length == 0) throw new ArgumentOutOfangeException("args");
+            if (args.Length == 0) throw new ArgumenOutOfangeException("args");
 
             Console.WriteLine(SayHello(args[0]));
         }
