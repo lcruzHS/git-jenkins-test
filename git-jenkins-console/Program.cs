@@ -10,6 +10,9 @@ namespace git_jenkins_console
     {
         public static void Main(string[] args)
         {
+            var ox = new DocumentFormat.OpenXml.Spreadsheet.Sheet();
+
+
             if (args == null) throw new ArgumentNullException("args");
 
             if (args.Length == 0) throw new ArgumentOutOfRangeException("args");
