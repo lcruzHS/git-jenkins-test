@@ -167,11 +167,11 @@ publish/
 PublishScripts/
 
 # NuGet Packages
-#*.nupkg
+*.nupkg
 # The packages folder can be ignored because of Package Restore
-#**/packages/*
-packages/*/lib/
-packages/*/ref/
+**/packages/*
+#packages/*/lib/
+#packages/*/ref/
 
 # except build/, which is used as an MSBuild target.
 !**/packages/build/
